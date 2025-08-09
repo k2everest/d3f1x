@@ -87,12 +87,19 @@ if (root) root.innerHTML = '<div style="padding:16px;font-family:system-ui,Arial
         if (ev.data.previewReady) {
           try {
             if (validationError) {
-              const msg = String(validationError && validationError.message ? validationError.message : 'Invalid code')
-              setParentValidationError(msg)
-              const errorSnippet = \`// Validation failed in parent: \${JSON.stringify(msg)}
-(function(){
-  const root = document.getElementById('root');
-  if (root) root.innerText = `Preview error (invalid JS): ${msg.replace(/'/g, "\\'")}`;
+  const msg = String(validationError && validationError.message ? validationError.message : 'Invalid code');
+  setParentValidationError(msg);
+
+  // Definindo o snippet com template string pura, sem caracteres estranhos
+  const errorSnippet = `// Validation failed in parent: ${JSON.stringify(msg)}
+(function(){const root = document.getElementById('root');
+  if (root) root.innerText = \`Preview error (invalid JS): \${msg.replace(/'/g, "\\'")}\`;
+})();
+`;
+
+  // resto do código usando errorSnippet...
+}
+
 })();\`
               iframeRef.current.contentWindow.postMessage({ userCode: errorSnippet }, '*')
             } else {
