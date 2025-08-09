@@ -3,4 +3,4 @@
 @tailwind utilities;
 
 html, body, #__next { height: 100%; }
-body { @apply bg-slate-50 text-slate-900; }
+body { @apply bg-gradient-to-br from-slate-100 via-white to-slate-200 text-slate-900; }
