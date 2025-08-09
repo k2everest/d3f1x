@@ -1,6 +1,6 @@
 {
   "name": "lovable-prototype",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,9 +12,9 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "monaco-editor": "0.39.0",
-    "@monaco-editor/react": "^4.4.6",
+    "@monaco-editor/react": "4.4.6",
     "axios": "1.4.0",
-    "tailwindcss": "^3.3.2",
+    "tailwindcss": "3.3.3",
     "autoprefixer": "10.4.14",
     "postcss": "8.4.24"
   }
