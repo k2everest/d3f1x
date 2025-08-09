@@ -56,16 +56,17 @@ if (root) root.innerHTML = '<div style="padding:16px;font-family:system-ui,Arial
       const looksLikeHtml = trimmed.startsWith('<') || /<!doctype|<html/i.test(trimmed)
 
       if (looksLikeHtml) {
-        const html = trimmed.startsWith('<!') || /<html/i.test(trimmed)
-          ? trimmed
-          : \`<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body>\${trimmed}</body></html>\`
+  const html = trimmed.startsWith('<!') || /<html/i.test(trimmed)
+    ? trimmed
+    : `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body>${trimmed}</body></html>`
 
-        const blob = new Blob([html], { type: 'text/html' })
-        const url = URL.createObjectURL(blob)
-        previewUrlRef.current = url
-        if (iframeRef.current) iframeRef.current.src = url
-        return
-      }
+  const blob = new Blob([html], { type: 'text/html' })
+  const url = URL.createObjectURL(blob)
+  previewUrlRef.current = url
+  if (iframeRef.current) iframeRef.current.src = url
+  return
+}
+
 
       let validationError = null
       try {
