@@ -92,7 +92,7 @@ if (root) root.innerHTML = '<div style="padding:16px;font-family:system-ui,Arial
               const errorSnippet = \`// Validation failed in parent: \${JSON.stringify(msg)}
 (function(){
   const root = document.getElementById('root');
-  if (root) root.innerText = 'Preview error (invalid JS): ${msg.replace(/'/g, "\\\'")}';
+  if (root) root.innerText = `Preview error (invalid JS): ${msg.replace(/'/g, "\\'")}`;
 })();\`
               iframeRef.current.contentWindow.postMessage({ userCode: errorSnippet }, '*')
             } else {
