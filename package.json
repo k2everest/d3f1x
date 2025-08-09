@@ -12,7 +12,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "monaco-editor": "0.39.0",
-    "@monaco-editor/react": "5.0.3",
+    "@monaco-editor/react": "^4.4.6",
     "axios": "1.4.0",
     "tailwindcss": "4.4.0",
     "autoprefixer": "10.4.14",
